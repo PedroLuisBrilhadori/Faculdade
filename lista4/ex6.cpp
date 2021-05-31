@@ -15,14 +15,14 @@ int main(){
     int horas, minutos, segundos, dia;
     float massa_inicial, massa_final;
 
-    horas = minutos = segundos = massa_inicial = massa_final = 0;
+    horas = minutos = segundos = massa_inicial = 0;
 
     cout << "Digite a massa inicial, em gramas: ";
     cin >> massa_inicial;
 
-    for(massa_final = 0; massa_final < 0.5;){
-        massa_final = massa_inicial / 2;
-        segundos++;
+    for(massa_final = massa_inicial; massa_final > 0.5;){
+        massa_final /= 2;
+        segundos += 50;
     }
 
     for(segundos = segundos; segundos >= 60;){

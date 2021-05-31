@@ -27,7 +27,7 @@ int main () {
         n2 = aux;
     }
 
-    if (n1 < n2 && n2 < n3){
+    if (n1 <= n2 && n2 <= n3){
         cout << "Os números em ordem crescente ficam: " << endl;
         cout << n1 << " " << n2 << " " << n3 << endl;
     } else

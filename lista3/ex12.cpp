@@ -85,9 +85,8 @@ int main() {
 
     if (mes < 1 && mes > 12)
         cout << "Dados inválidos." << endl;
-
-
-    cout << "Dia seguinte: " << dia << "/" << mes << "/" << ano << endl;
+    else
+        cout << "Dia seguinte: " << dia << "/" << mes << "/" << ano << endl;
     
     return 0;
 }
