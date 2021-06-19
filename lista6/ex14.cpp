@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-    int vetor[TAM];
+    int vetor[TAM], aux;
 
     for(int i = 0; i < TAM; i++){
         cout << "insira o valor " << i << ": ";
@@ -13,9 +13,9 @@ int main() {
     }
 
     for(int i = 0; i < TAM; i++){
-        for(int b = 0; b < i; b++){
-            if(vetor[i] == vetor[b]){
-                cout << "valor [" << i << "] é igual ao do [" << b << "]" << endl;  
+        for(int b = 0; b < TAM; b++){ 
+            if(vetor[i] == vetor[b] && i != b){
+                cout << "O Índice " << b << "contém um valor que se repete" << endl;
             }
         }
     }
