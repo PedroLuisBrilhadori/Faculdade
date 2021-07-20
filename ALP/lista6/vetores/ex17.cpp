@@ -9,6 +9,7 @@ int main() {
     int vetor[TAM], aux;
 
     for(int i = 0; i < TAM; i++){
+        cout << "insira um número inteiro: ";
         cin >> aux;
 
         if(aux % 2 == 0){
