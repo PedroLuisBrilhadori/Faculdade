@@ -1,3 +1,5 @@
-# listas-ALP
+# Coisas da Faculdade
 
-listas de ALP
+- ALP - Algoritmos e lógica de Programação; <br>
+  Aprendi Lógica e um pouco de C++
+ 
