@@ -1,7 +1,6 @@
 // Escreva um programa que receba n notas e retorne a média das notas digitadas.
 
 #include <iostream> 
-#include <math.h>
 
 using namespace std;
 
