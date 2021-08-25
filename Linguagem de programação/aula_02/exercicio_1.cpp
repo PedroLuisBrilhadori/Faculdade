@@ -5,7 +5,6 @@ reprovado: média < 3 e exame média entre um número maior ou igual a 3 e menor
 */
 
 #include <iostream> 
-#include <math.h>
 
 using namespace std;
 
