@@ -41,15 +41,23 @@ void escreveArquivo(char * texto, int fim){
 
 void criptografar(char * texto, int tam){
     for(int i = 0; i < tam; i++){
-        if(texto[i] != 32)
+        if(texto[i] != 32 && toupper(texto[i]) < 88)
             texto[i] = texto[i] + 3;
+        else{
+            if(toupper(texto[i]) >= 88 && toupper(texto[i]) <= 90)
+                texto[i] = texto[i] - 23;
+        }    
     }
 }
 
-void descriptografar(char * cripto, int tam){
+void descriptografar(char * texto, int tam){
     for(int i = 0; i < tam; i++){
-        if(cripto[i] != 32)
-            cripto[i] = cripto[i] - 3;
+        if(texto[i] != 32 && toupper(texto[i]) > 67)
+            texto[i] = texto[i] - 3;
+        else{
+            if(toupper(texto[i]) >= 65 && toupper(texto[i]) <= 67)
+                texto[i] = texto[i] + 23;
+        }  
     }
 }
 
