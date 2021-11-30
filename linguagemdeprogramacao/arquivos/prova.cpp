@@ -5,14 +5,25 @@
 using namespace std;
 
 int main(){
+    system("cls");
 
-    char texto[30];
+    char texto[50], aux, fim = 0;
 
     FILE *arquivo;
     arquivo = fopen("texto.txt","r");
 
     for (int i = 0; !feof(arquivo); i++){
-        texto[i] = fgetc(arquivo);
+        aux = fgetc(arquivo);
+        if(aux >= 65 && aux <= 90){
+            texto[fim] = aux;
+            fim++;
+        } else if(aux >= 97 && aux <= 122){
+            texto[fim] = aux;
+            fim++;
+        }
+    }
+
+    for(int i = 0; i <= fim; i++){
         cout << texto[i];
     }
 
