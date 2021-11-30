@@ -1,6 +1,5 @@
 #include <iostream>
 #include <windows.h>
-#include <string.h>
 
 #define TAM 50
 
