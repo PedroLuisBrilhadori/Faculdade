@@ -14,10 +14,7 @@ int leArquivo(char * texto) {
 
     for (int i = 0; !feof(arquivo); i++){
         aux = fgetc(arquivo);
-        if(aux >= 65 && aux <= 90 || aux == 32){
-            texto[fim] = aux;
-            fim++;
-        } else if(aux >= 97 && aux <= 122 || aux == 32){
+        if(toupper(aux) >= 65 && toupper(aux) <= 90 || aux == 32 || aux == '\n'){
             texto[fim] = aux;
             fim++;
         }
@@ -41,23 +38,21 @@ void escreveArquivo(char * texto, int fim){
 
 void criptografar(char * texto, int tam){
     for(int i = 0; i < tam; i++){
-        if(texto[i] != 32 && toupper(texto[i]) < 88)
+        if(toupper(texto[i]) >= 65 && toupper(texto[i]) < 88)
             texto[i] = texto[i] + 3;
-        else{
-            if(toupper(texto[i]) >= 88 && toupper(texto[i]) <= 90)
+        else if(toupper(texto[i]) >= 88 && toupper(texto[i]) <= 90)
                 texto[i] = texto[i] - 23;
-        }    
+        else 
+            texto[i] = texto[i];
     }
 }
 
 void descriptografar(char * texto, int tam){
     for(int i = 0; i < tam; i++){
-        if(texto[i] != 32 && toupper(texto[i]) > 67)
+        if(toupper(texto[i]) <= 90 && toupper(texto[i]) > 67)
             texto[i] = texto[i] - 3;
-        else{
-            if(toupper(texto[i]) >= 65 && toupper(texto[i]) <= 67)
+        else if(toupper(texto[i]) >= 65 && toupper(texto[i]) <= 67)
                 texto[i] = texto[i] + 23;
-        }  
     }
 }
 
