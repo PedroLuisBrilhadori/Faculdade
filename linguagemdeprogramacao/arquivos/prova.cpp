@@ -1,7 +1,7 @@
 #include <iostream>
 #include <windows.h>
 
-#define TAM 50
+#define TAM 400
 
 using namespace std;
 
