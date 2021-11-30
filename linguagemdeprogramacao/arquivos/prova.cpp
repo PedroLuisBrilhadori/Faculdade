@@ -68,6 +68,36 @@ int main(){
     char texto[TAM];
     int fim = leArquivo(texto);
 
+    do{
+        cout << "------------- Menu -------------\n";
+        cout << "1 - CRIPTOGRAFAR \n";
+        cout << "2 - DESCRIPTOGRAFAR \n";
+        cout << "3 - IMPRIMIR \n";
+        cout << "9 - SAIR \n";
+        cout << "--------------------------------\n";
+
+        fflush(stdin);
+        cin >> flag;
+
+        switch (flag){
+        case 1:
+            criptografar(texto, fim);
+            escreveArquivo(texto, fim);
+            leArquivo(texto);
+            break;
+        case 2:
+            descriptografar(texto, fim);
+            escreveArquivo(texto, fim);
+            leArquivo(texto);
+            break;
+        case 3: 
+            imprimir(texto, fim);
+            break;
+        default:
+            flag = 9;
+            break;
+        }
+    } while(flag != 9);
 
     return 0;
 }
