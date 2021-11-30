@@ -24,15 +24,26 @@ int leArquivo(char * texto) {
         }
     }
 
+    fclose(arquivo);
+
     return fim;
 }
 
-void criptografar(char * texto, char * cripto, int tam){
+void escreveArquivo(char * texto, int fim){
+    FILE *arquivo;
+    arquivo = fopen("texto.txt","w");
+
+    for(int i = 0; i < fim; i++){
+        fputc(texto[i], arquivo);
+    }
+
+    fclose(arquivo);
+}
+
+void criptografar(char * texto, int tam){
     for(int i = 0; i < tam; i++){
         if(texto[i] != 32)
-            cripto[i] = texto[i] + 3;
-        else 
-            cripto[i] = texto[i];       
+            texto[i] = texto[i] + 3;
     }
 }
 
@@ -53,15 +64,10 @@ void imprimir (char * imprime, int fim){
 int main(){
     system("cls");
 
-    char texto[TAM], cripto[TAM];
-
+    int flag;
+    char texto[TAM];
     int fim = leArquivo(texto);
 
-    criptografar(texto, cripto, fim);
-    imprimir(cripto, fim);
-
-    descriptografar(cripto, fim);
-    imprimir(cripto, fim);
 
     return 0;
 }
