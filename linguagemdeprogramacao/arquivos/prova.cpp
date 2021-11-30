@@ -14,10 +14,10 @@ int main(){
 
     for (int i = 0; !feof(arquivo); i++){
         aux = fgetc(arquivo);
-        if(aux >= 65 && aux <= 90){
+        if(aux >= 65 && aux <= 90 || aux == 32){
             texto[fim] = aux;
             fim++;
-        } else if(aux >= 97 && aux <= 122){
+        } else if(aux >= 97 && aux <= 122 || aux == 32){
             texto[fim] = aux;
             fim++;
         }
