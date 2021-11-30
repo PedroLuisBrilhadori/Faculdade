@@ -6,6 +6,27 @@
 
 using namespace std;
 
+int leArquivo(char * texto) {
+    FILE *arquivo;
+    arquivo = fopen("texto.txt","r");
+
+    int fim;
+    char aux;
+
+    for (int i = 0; !feof(arquivo); i++){
+        aux = fgetc(arquivo);
+        if(aux >= 65 && aux <= 90 || aux == 32){
+            texto[fim] = aux;
+            fim++;
+        } else if(aux >= 97 && aux <= 122 || aux == 32){
+            texto[fim] = aux;
+            fim++;
+        }
+    }
+
+    return fim;
+}
+
 void criptografar(char * texto, char * cripto, int tam){
     for(int i = 0; i < tam; i++){
         if(texto[i] != 32)
@@ -32,21 +53,9 @@ void imprimir (char * imprime, int fim){
 int main(){
     system("cls");
 
-    char texto[TAM], cripto[TAM], aux, fim = 0;
+    char texto[TAM], cripto[TAM];
 
-    FILE *arquivo;
-    arquivo = fopen("texto.txt","r");
-
-    for (int i = 0; !feof(arquivo); i++){
-        aux = fgetc(arquivo);
-        if(aux >= 65 && aux <= 90 || aux == 32){
-            texto[fim] = aux;
-            fim++;
-        } else if(aux >= 97 && aux <= 122 || aux == 32){
-            texto[fim] = aux;
-            fim++;
-        }
-    }
+    int fim = leArquivo(texto);
 
     criptografar(texto, cripto, fim);
     imprimir(cripto, fim);
