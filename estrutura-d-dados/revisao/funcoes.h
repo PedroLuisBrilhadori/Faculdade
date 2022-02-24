@@ -15,7 +15,6 @@ struct calculo {
 // Defina um vetor com 5 elementos a partir dessa struct para armazenamento do histórico
 
 calculo historico[5]; 
-int historicoEnd = 5;
 
 
 // Implemente a função soma:
@@ -61,10 +60,6 @@ void adicionaCalculo(int a, int b, char op, int result) {
     }  
 
     historico[0] = calculo;
-
-    if(historicoEnd > 0){
-      historicoEnd--;
-    }
 }
 
 // Implemente a função calculadora:
@@ -73,17 +68,22 @@ int calculadora(int a, int b, char operacao) {
     switch (operacao) {
         case '+':             
             adicionaCalculo(a, b, operacao, soma(a, b));
+            return soma(a, b);
             break;
         case '-': 
             adicionaCalculo(a, b, operacao, subtracao(a, b));
+            return subtracao(a, b);
             break;
         case '*': 
             adicionaCalculo(a, b, operacao, multiplicacao(a, b));
+            return multiplicacao(a, b);
             break;
         case '/': 
             adicionaCalculo(a, b, operacao, divisao(a, b));
+            return(divisao(a, b));
             break;    
         default:
+            return 0;
             break;
     }
 
@@ -98,30 +98,32 @@ int limpaHistorico() {
         h.operacao = 0; 
         h.resultado = 0;
     }
-    historicoEnd = 5;
+
+    return 1;
 }
 
 // Implemente a função listaHistorico:
 string listaHistorico() {
     // Seu código aqui:
-    string his = "Histórico: \n";
+    string resultados = "Histórico: \n";
 
-    for(int i = 4; i >=  historicoEnd; i--){
-        his += "\t";
-        
-        his += to_string(historico[i].a);
-        his += " ";
+    for(int i = 0; i < 5; i++){
+        resultados += "\t";
 
-        his += historico[i].operacao;
+        resultados += to_string(historico[i].a);
+        resultados += " ";
 
-        his += " "; 
-        his += to_string(historico[i].b);
+        resultados += historico[i].operacao;
+
+        resultados += " "; 
+        resultados += to_string(historico[i].b);
         
-        his += " = ";
-        his += to_string(historico[i].resultado);
+        resultados += " = ";
+        resultados += to_string(historico[i].resultado);
         
-        his += "\n" ;
+        resultados += "\n" ;
     }
 
-    return his; 
+    cout << resultados << endl;
+    return ""; 
 }

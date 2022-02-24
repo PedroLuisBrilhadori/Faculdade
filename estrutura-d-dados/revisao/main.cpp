@@ -14,6 +14,9 @@ int main() {
     calculadora(9, 3, '*');
     calculadora(9, 3, '-');
 
+    cout << listaHistorico() << endl;
+    
+    calculadora(9, 31, '-');
 
     cout << listaHistorico() << endl;
 
