@@ -10,4 +10,6 @@ class Pilha {
         bool empilhar(int valor);
         bool desempilhar(int &valor);
         bool retornaTopo(int &valor);
+        bool invertePilha();
+        void exibePilha();
 };

@@ -9,13 +9,13 @@ int main() {
     Pilha minhaPilha;
     int recebeValor;
     minhaPilha.empilhar(1);
-    cout << minhaPilha.desempilhar(recebeValor) << endl;
-    cout << "valor: " << recebeValor << endl;
-    
-    PilhaChar pilhaChar;
-    char resultado;
+    minhaPilha.empilhar(3);
+    minhaPilha.empilhar(4);
 
-    pilhaChar.empilhar('p');
-    cout << pilhaChar.desempilhar(resultado) << endl;
-    cout << "valor: " << resultado << endl;
+    cout << "antes: \n";
+    minhaPilha.exibePilha();
+
+    minhaPilha.invertePilha();
+    cout << "depois: \n";
+    minhaPilha.exibePilha();
 }

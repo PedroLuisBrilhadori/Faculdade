@@ -45,3 +45,37 @@ bool Pilha::retornaTopo(int &valor) {
     valor = conteudo[contador-1];
     return true;
 }
+
+bool Pilha::invertePilha() {
+    if(vazia()){
+        return false;
+    }
+    
+
+    int inverte[contador];
+    
+    for(int i = 0; i < contador; i++){
+        inverte[i] = conteudo[contador - i -1];
+    }
+
+    for(int i = 0; i < contador; i++){
+        conteudo[i] = inverte[i];
+    }
+
+    return true;
+}
+
+
+void Pilha::exibePilha() {
+    if(vazia()){
+        cout << "Pilha Vazia. \n";
+        return;
+    }
+    
+    cout << "Pilha: ";
+    for(int i = 0; i < contador; i++) {
+        cout << conteudo[i] << " "; 
+    }
+
+    cout << "\n";
+}
