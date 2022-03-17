@@ -8,14 +8,16 @@ using namespace std;
 int main() {
     Pilha minhaPilha;
     int recebeValor;
+    minhaPilha.empilhar(10);
+    minhaPilha.empilhar(-1);
+    minhaPilha.empilhar(100);
     minhaPilha.empilhar(1);
-    minhaPilha.empilhar(3);
-    minhaPilha.empilhar(4);
 
-    cout << "antes: \n";
-    minhaPilha.exibePilha();
+    int maior;  
+    minhaPilha.maiorValor(maior);
+    cout << "maior valor: " << maior << endl;
 
-    minhaPilha.invertePilha();
-    cout << "depois: \n";
-    minhaPilha.exibePilha();
+    int menor;  
+    minhaPilha.menorValor(menor);
+    cout << "menor valor: " << menor << endl;
 }

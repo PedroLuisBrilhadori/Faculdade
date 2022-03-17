@@ -65,6 +65,33 @@ bool Pilha::invertePilha() {
     return true;
 }
 
+bool Pilha::maiorValor(int &valor){
+    if(vazia()){
+        return false;
+    }
+    valor = 0;
+
+    for(int i = 0; i < contador; i++){
+        valor = valor < conteudo[i] ? conteudo[i] : valor;
+    }
+
+    return true;
+}
+
+bool Pilha::menorValor(int &valor){
+    if(vazia()){
+        return false;
+    }
+
+    maiorValor(valor);
+
+    for(int i = 0; i < contador; i++){
+        valor = valor > conteudo[i] ? conteudo[i] : valor;
+    }
+
+    return true;
+}
+
 
 void Pilha::exibePilha() {
     if(vazia()){

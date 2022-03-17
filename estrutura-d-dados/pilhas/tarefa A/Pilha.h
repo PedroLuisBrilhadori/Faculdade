@@ -11,5 +11,7 @@ class Pilha {
         bool desempilhar(int &valor);
         bool retornaTopo(int &valor);
         bool invertePilha();
+        bool maiorValor(int &valor);
+        bool menorValor(int &valor);
         void exibePilha();
 };
