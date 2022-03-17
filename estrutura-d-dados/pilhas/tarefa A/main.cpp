@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 #define MAX 5
 
@@ -6,23 +7,24 @@ using namespace std;
 #include "PilhaChar.cpp"
 
 int main() {
-    Pilha minhaPilha;
-    int recebeValor;
-    minhaPilha.empilhar(10);
-    minhaPilha.empilhar(9);
-    minhaPilha.empilhar(5);
-    minhaPilha.empilhar(2);
-    minhaPilha.empilhar(3);
+    PilhaChar minhaPilha;
 
-    int valores[MAX];
-    int quantidade = 0;
-    if (minhaPilha.impares(valores, quantidade)) {
+    minhaPilha.empilhar('o');
+    minhaPilha.empilhar('s');
+    minhaPilha.empilhar('s');
+    minhaPilha.empilhar('o');
 
-        cout << "Valores impares: ";
-        for (int i = 0; i < quantidade; i++) {
-            cout << valores[i] << " ";
+    int tamanho = 0;
+    char palavra[MAX];
+
+    if(minhaPilha.palindromo(palavra, tamanho)){
+        cout << "Palavra é um palindromo: ";
+        for(int i = 0; i < tamanho; i++){
+            cout << palavra[i];
         }
-        cout << "\n";
+        cout << endl;
+    } else {
+        cout << "Palavra não é um palindromo \n";
     }
 
 }
