@@ -107,6 +107,23 @@ bool Pilha::media(float &valor){
     return true;
 } 
 
+bool Pilha::impares(int valores[MAX], int &quantidade){
+    if(vazia()){
+        return false;
+    }
+
+    quantidade = 0;
+
+    for(int i = 0; i < contador; i++){
+       if((conteudo[i] % 2) != 0){
+           valores[quantidade] = conteudo[i];
+           quantidade++;
+       }
+    }
+
+    return true;
+}
+
 void Pilha::exibePilha() {
     if(vazia()){
         cout << "Pilha Vazia. \n";
