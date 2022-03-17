@@ -92,6 +92,20 @@ bool Pilha::menorValor(int &valor){
     return true;
 }
 
+bool Pilha::media(float &valor){
+    if(vazia()){
+        return false;
+    }
+    valor = 0;
+
+    for(int i = 0; i < contador; i++){
+        valor += conteudo[i];
+    }
+
+    valor /= contador;
+
+    return true;
+} 
 
 void Pilha::exibePilha() {
     if(vazia()){

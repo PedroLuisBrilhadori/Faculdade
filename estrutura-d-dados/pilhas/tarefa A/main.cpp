@@ -9,15 +9,11 @@ int main() {
     Pilha minhaPilha;
     int recebeValor;
     minhaPilha.empilhar(10);
-    minhaPilha.empilhar(-1);
-    minhaPilha.empilhar(100);
-    minhaPilha.empilhar(1);
+    minhaPilha.empilhar(9);
+    minhaPilha.empilhar(5);
+    minhaPilha.empilhar(5);
 
-    int maior;  
-    minhaPilha.maiorValor(maior);
-    cout << "maior valor: " << maior << endl;
-
-    int menor;  
-    minhaPilha.menorValor(menor);
-    cout << "menor valor: " << menor << endl;
+    float media;
+    minhaPilha.media(media);
+    cout << "media: " << media << endl;
 }

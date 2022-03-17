@@ -13,5 +13,6 @@ class Pilha {
         bool invertePilha();
         bool maiorValor(int &valor);
         bool menorValor(int &valor);
+        bool media(float &valor);
         void exibePilha();
 };
