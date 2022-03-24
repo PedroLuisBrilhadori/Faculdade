@@ -28,11 +28,21 @@ int main() {
 
     minhaFila.primeiro(x);
     cout << "Primeiro item: " << x << endl;
+    cout << "\n";
 
     minhaFila.ultimo(x);
     cout << "Ultimo item: " << x << endl;
+    cout << "\n";
 
+    minhaFila.esvaziar();
+
+    if(minhaFila.vazia())
+        cout << "pilha vazia \n";
+    else 
+        cout << "Pilha com items \n";
+    cout << "\n";
     
+
     //fila02 = minhaFila.interseccao(fila01);
     //cout << fila02.listar();
     

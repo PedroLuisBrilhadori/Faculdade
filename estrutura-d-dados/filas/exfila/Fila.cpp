@@ -63,5 +63,23 @@ bool Fila::ultimo(int &x) {
 	return true;
 }
 
+bool Fila::esvaziar(){
+	if(vazia()){
+		return false;
+	}
+
+	int x, aux = 1;
+
+	while (aux != 0) {
+		if(!remover(x)){
+			aux = 0;
+		}
+	}
+	
+
+	return true;
+}
+
+
 
 
