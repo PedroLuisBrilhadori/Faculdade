@@ -18,13 +18,18 @@
 
 using namespace std;
 
+bool adicionaItems(int quant, Fila &minhaFila){
+    for(int i = 0; i < quant; i++){
+        minhaFila.inserir(i);
+    }
+    return true;
+}
+
 int main() {
     Fila minhaFila, fila01, fila02;
     int x, y;
 
-    minhaFila.inserir(1);
-    minhaFila.inserir(3);
-    minhaFila.inserir(2);
+    adicionaItems(2, minhaFila);
 
     minhaFila.primeiro(x);
     cout << "Primeiro item: " << x << endl;
@@ -40,6 +45,11 @@ int main() {
         cout << "pilha vazia \n";
     else 
         cout << "Pilha com items \n";
+    cout << "\n";
+    
+    adicionaItems(5, minhaFila);
+
+    cout << "Tamanho da fila: " << minhaFila.tamanho() << endl;
     cout << "\n";
     
 

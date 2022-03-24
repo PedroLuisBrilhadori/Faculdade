@@ -76,10 +76,25 @@ bool Fila::esvaziar(){
 		}
 	}
 	
-
 	return true;
 }
 
+int Fila::tamanho() {
+	if(vazia()){
+		return 0;
+	}
+
+	int quantidade = 1;
+	PonteiroElemento item = inicio;
+	
+	do{
+		item = item->proximoElemento;
+		quantidade++;
+		
+	}while(item->proximoElemento != NULL);
+
+	return quantidade;
+}
 
 
 
