@@ -53,5 +53,15 @@ bool Fila::primeiro(int &x) {
 }
 
 
+bool Fila::ultimo(int &x) {
+
+	if(vazia()){
+		return false;
+	}
+
+	x = fim->valor;
+	return true;
+}
+
 
 

@@ -23,10 +23,14 @@ int main() {
     int x, y;
 
     minhaFila.inserir(1);
+    minhaFila.inserir(3);
     minhaFila.inserir(2);
 
     minhaFila.primeiro(x);
     cout << "Primeiro item: " << x << endl;
+
+    minhaFila.ultimo(x);
+    cout << "Ultimo item: " << x << endl;
 
     
     //fila02 = minhaFila.interseccao(fila01);
