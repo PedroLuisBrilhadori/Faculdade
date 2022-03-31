@@ -123,4 +123,34 @@ bool Fila::inverter() {
 	return true;
 }
 
+string Fila::listar() {
+	if(vazia()){
+		return "";
+	}
+	
+	int y;
+	string items = "";
+	Fila auxFila; 
+
+	int contador = 0, quant = tamanho();
+
+	while(remover(y)){
+		items += " ";
+		items += to_string(y);
+		contador++;
+		auxFila.inserir(y);
+		
+		if(contador != quant){
+			items += " ";
+			items += ";";
+		}
+
+	}
+
+	while(auxFila.remover(y)){
+		inserir(y);
+	}
+
+	return items;
+}
 

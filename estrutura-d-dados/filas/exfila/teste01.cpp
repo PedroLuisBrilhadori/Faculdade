@@ -69,5 +69,6 @@ int main() {
     cout << "\tTamanho da fila: " << minhaFila.tamanho() << endl;
     cout << "\n";
 
-    
+    cout << "Lista Fila: \n";
+    cout << "\t" << minhaFila.listar() << endl;
 }
