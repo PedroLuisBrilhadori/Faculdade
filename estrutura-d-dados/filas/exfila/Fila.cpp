@@ -97,4 +97,30 @@ int Fila::tamanho() {
 }
 
 
+bool Fila::inverter() {
+	if(vazia()){
+		return false;
+	}
+
+	int y, quant = tamanho();
+	int itens[quant];
+	int contador = quant - 1;
+
+
+	while (remover(y)) {
+		itens[contador] = y;
+		contador--;
+
+	}
+
+	contador = quant - 1;
+
+	while (contador >= 0){
+		inserir(itens[contador]);
+		contador--;
+	}
+
+	return true;
+}
+
 

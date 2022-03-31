@@ -32,28 +32,42 @@ int main() {
     adicionaItems(2, minhaFila);
 
     minhaFila.primeiro(x);
-    cout << "Primeiro item: " << x << endl;
+    cout << "Primeiro:\n";
+    cout << "\tPrimeiro item: " << x << endl;
     cout << "\n";
 
     minhaFila.ultimo(x);
-    cout << "Ultimo item: " << x << endl;
+    cout << "Ultimo:\n";
+    cout << "\tUltimo item: " << x << endl;
+    cout << "\n";
+
+    
+    minhaFila.inverter();    
+
+    cout << "Inverte: \n";
+    
+    minhaFila.primeiro(x);
+    cout << "\tPrimeiro item: " << x << endl;
+    cout << "\n";
+
+    minhaFila.ultimo(x);
+    cout << "\tUltimo item: " << x << endl;
     cout << "\n";
 
     minhaFila.esvaziar();
 
+    cout << "vazia:\n";
     if(minhaFila.vazia())
-        cout << "pilha vazia \n";
+        cout << "\tpilha vazia \n";
     else 
-        cout << "Pilha com items \n";
+        cout << "\tPilha com items \n";
     cout << "\n";
     
     adicionaItems(5, minhaFila);
 
-    cout << "Tamanho da fila: " << minhaFila.tamanho() << endl;
+    cout << "Tamanho:\n";
+    cout << "\tTamanho da fila: " << minhaFila.tamanho() << endl;
     cout << "\n";
-    
 
-    //fila02 = minhaFila.interseccao(fila01);
-    //cout << fila02.listar();
     
 }
