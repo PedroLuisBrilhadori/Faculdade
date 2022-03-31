@@ -100,12 +100,12 @@ bool Fila::inverter() {
 
 	int y, quant = tamanho();
 	int itens[quant];
-	int contador = quant - 1;
+	int contador = 0;
 
 
 	while (remover(y)) {
 		itens[contador] = y;
-		contador--;
+		contador++;
 
 	}
 

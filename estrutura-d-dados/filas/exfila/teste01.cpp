@@ -41,18 +41,6 @@ int main() {
     cout << "\tUltimo item: " << x << endl;
     cout << "\n";
 
-    
-    minhaFila.inverter();    
-
-    cout << "Inverte: \n";
-    
-    minhaFila.primeiro(x);
-    cout << "\tPrimeiro item: " << x << endl;
-    cout << "\n";
-
-    minhaFila.ultimo(x);
-    cout << "\tUltimo item: " << x << endl;
-    cout << "\n";
 
     minhaFila.esvaziar();
 
@@ -64,6 +52,18 @@ int main() {
     cout << "\n";
     
     adicionaItems(5, minhaFila);
+
+
+    cout << "Antes de inverter: \n";
+    cout << "\t" << minhaFila.listar() << endl;
+    cout << "\n";
+    
+    minhaFila.inverter();    
+    
+    cout << "Depois de inverter: \n";
+    cout << "\t" << minhaFila.listar() << endl;
+    cout << "\n";
+
 
     cout << "Tamanho:\n";
     cout << "\tTamanho da fila: " << minhaFila.tamanho() << endl;
