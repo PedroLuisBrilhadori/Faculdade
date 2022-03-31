@@ -69,6 +69,9 @@ int main() {
     cout << "\tTamanho da fila: " << minhaFila.tamanho() << endl;
     cout << "\n";
 
+    minhaFila.esvaziar();
+    adicionaItems(1, minhaFila);
+    
     cout << "Lista Fila: \n";
     cout << "\t" << minhaFila.listar() << endl;
     cout << "\n";
@@ -79,5 +82,20 @@ int main() {
     else 
         cout << "\tO número: 3 não esta na fila. \n"; 
     cout << "\n";
+
+    minhaFila.esvaziar();
+
+    minhaFila.inserir(2);
+    minhaFila.inserir(5);
+    minhaFila.inserir(3);
+    minhaFila.inserir(8);
+
+    fila01.inserir(8);
+    fila01.inserir(8);
+    fila01.inserir(7);
+
+
+    cout << "Intersecção: \n";
+    cout << "\t" << minhaFila.interseccao(fila01).listar() << endl; 
 
 }

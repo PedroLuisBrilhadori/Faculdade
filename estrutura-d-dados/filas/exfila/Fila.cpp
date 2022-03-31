@@ -33,6 +33,7 @@ bool Fila::remover(int &x) {
     PonteiroElemento p;
     if (vazia())
         return false;
+
     x = inicio->valor;
     p = inicio;
     inicio = inicio->proximoElemento;
@@ -68,13 +69,8 @@ bool Fila::esvaziar(){
 		return false;
 	}
 
-	int x, aux = 1;
-
-	while (aux != 0) {
-		if(!remover(x)){
-			aux = 0;
-		}
-	}
+	int x;
+	while (remover(x)) {}
 	
 	return true;
 }
@@ -132,24 +128,19 @@ string Fila::listar() {
 	string items = "";
 	Fila auxFila; 
 
-	int contador = 0, quant = tamanho();
 
 	while(remover(y)){
-		items += " ";
-		items += to_string(y);
-		contador++;
-		auxFila.inserir(y);
-		
-		if(contador != quant){
-			items += " ";
-			items += ";";
-		}
-
+		items +=  to_string(y) + " ; ";
+		auxFila.inserir(y);		
 	}
 
 	while(auxFila.remover(y)){
 		inserir(y);
 	}
+
+	items.pop_back();
+    items.pop_back();
+    items.pop_back();
 
 	return items;
 }
@@ -167,8 +158,41 @@ bool Fila::estaNaFila(int x) {
 		
 		item = item->proximoElemento;
 	}
-	
+
+
+	if (item->valor == x){
+		return true;
+	} 
 
 
 	return false;
+}
+
+Fila Fila::interseccao(Fila auxFila) {
+	// retornar objeto Fila contendo a intersec��o com a lista atual
+	// elementos em comum com as 2 listas
+	// sem repeti��o de elementos
+	// seu c�digo aqui:
+
+	PonteiroElemento item = inicio;
+	Fila inter, filaAux; 
+	int y;
+
+	if(vazia() || auxFila.vazia()){
+		return inter;
+	}
+
+	while(auxFila.remover(y)){		
+		if(estaNaFila(y) && !inter.estaNaFila(y)){
+			inter.inserir(y);
+		}		
+		filaAux.inserir(y);
+	}
+	
+	while (filaAux.remover(y)){
+		auxFila.inserir(y);
+	}
+
+	return inter;
+
 }
