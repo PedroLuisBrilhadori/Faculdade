@@ -23,6 +23,6 @@ class Fila {
         bool inverter();
         string listar();
         bool estaNaFila(int x);
-        Fila interseccao(Fila auxFila);
-        Fila uniao(Fila auxFila);
+        Fila interseccao(Fila &auxFila);
+        Fila uniao(Fila &auxFila);
 };

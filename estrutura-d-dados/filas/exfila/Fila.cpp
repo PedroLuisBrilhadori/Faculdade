@@ -168,13 +168,12 @@ bool Fila::estaNaFila(int x) {
 	return false;
 }
 
-Fila Fila::interseccao(Fila auxFila) {
+Fila Fila::interseccao(Fila &auxFila) {
 	// retornar objeto Fila contendo a intersec��o com a lista atual
 	// elementos em comum com as 2 listas
 	// sem repeti��o de elementos
 	// seu c�digo aqui:
 
-	PonteiroElemento item = inicio;
 	Fila inter, filaAux; 
 	int y;
 
@@ -193,6 +192,48 @@ Fila Fila::interseccao(Fila auxFila) {
 		auxFila.inserir(y);
 	}
 
+
 	return inter;
 
+}
+
+Fila Fila::uniao(Fila &auxFila) {
+	// retornar objeto Fila contendo a uni�o com a lista atual
+	// elementos das 2 listas
+	// sem repeti��o de elementos
+	// seu c�digo aqui:
+
+	int y;
+	Fila uniao;
+
+	if(auxFila.vazia() || vazia()) {
+		return uniao;
+	} 
+
+	Fila filaAux;
+	
+	while (remover(y)){
+		if(!uniao.estaNaFila(y))
+			uniao.inserir(y);
+
+		filaAux.inserir(y);
+	}
+
+	while (filaAux.remover(y)){
+		inserir(y);
+	}
+
+	while(auxFila.remover(y)){
+		if(!uniao.estaNaFila(y))
+			uniao.inserir(y);
+
+		filaAux.inserir(y);
+	}
+
+	while (filaAux.remover(y)){
+		auxFila.inserir(y);
+	}
+
+	return uniao;	
+	
 }

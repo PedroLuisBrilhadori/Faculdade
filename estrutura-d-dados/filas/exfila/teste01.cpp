@@ -71,7 +71,7 @@ int main() {
 
     minhaFila.esvaziar();
     adicionaItems(1, minhaFila);
-    
+
     cout << "Lista Fila: \n";
     cout << "\t" << minhaFila.listar() << endl;
     cout << "\n";
@@ -94,8 +94,11 @@ int main() {
     fila01.inserir(8);
     fila01.inserir(7);
 
-
     cout << "Intersecção: \n";
     cout << "\t" << minhaFila.interseccao(fila01).listar() << endl; 
+    cout << "\n";
+
+    cout << "União: \n"; 
+    cout << "\t" << minhaFila.uniao(fila01).listar() << endl;
 
 }
