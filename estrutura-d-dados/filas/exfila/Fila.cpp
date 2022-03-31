@@ -154,3 +154,21 @@ string Fila::listar() {
 	return items;
 }
 
+bool Fila::estaNaFila(int x) {
+	if(vazia()){
+		return false;
+	}
+
+	PonteiroElemento item = inicio;
+
+	while (item->proximoElemento != NULL){
+		if(item->valor == x)
+			return true;
+		
+		item = item->proximoElemento;
+	}
+	
+
+
+	return false;
+}

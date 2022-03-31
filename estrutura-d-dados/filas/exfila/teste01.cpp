@@ -56,7 +56,7 @@ int main() {
 
     minhaFila.esvaziar();
 
-    cout << "vazia:\n";
+    cout << "Vazia:\n";
     if(minhaFila.vazia())
         cout << "\tpilha vazia \n";
     else 
@@ -71,4 +71,13 @@ int main() {
 
     cout << "Lista Fila: \n";
     cout << "\t" << minhaFila.listar() << endl;
+    cout << "\n";
+
+    cout << "Verifica Item: \n"; 
+    if(minhaFila.estaNaFila(3))
+        cout << "\tO número: 3 esta na fila. \n"; 
+    else 
+        cout << "\tO número: 3 não esta na fila. \n"; 
+    cout << "\n";
+
 }
