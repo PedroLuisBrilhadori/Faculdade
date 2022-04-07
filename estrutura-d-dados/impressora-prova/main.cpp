@@ -54,9 +54,6 @@ int main() {
     int opcao; 
     Fila minhaFilha; 
 
-    minhaFilha.inserirFolhas(10);
-    minhaFilha.inserir("pedro", 1);
-
     do {
         cout << menu(minhaFilha.listarFolhas(), minhaFilha.qntDeArquivos()); 
         cin >> opcao;

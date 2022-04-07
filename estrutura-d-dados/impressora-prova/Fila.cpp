@@ -46,10 +46,10 @@ bool Fila::inserir(string nomeArquivo, int qntFolhas) {
 bool Fila::remover(int &id, string &nome, int &qntFolhas) {
     // Remover um arquivo da fila da impressão (imprimir);
     // Altere o método remover:
-    PonteiroElemento p;
     if (vazia())
         return false;
-
+x
+    PonteiroElemento p;
     id = inicio->id;
     nome = inicio->nome;
     qntFolhas = inicio->qntFolhas;
@@ -76,8 +76,7 @@ string Fila::listar() {
     if(vazia())
         return "";
 
-    int i, f;
-    string n, items = "";
+    string items = "";
     PonteiroElemento item;
 
     item = inicio;
@@ -89,7 +88,6 @@ string Fila::listar() {
     }
 
 
-    items.pop_back();
 
     return items;
 
