@@ -48,13 +48,12 @@ bool Fila::remover(int &id, string &nome, int &qntFolhas) {
     // Altere o método remover:
     if (vazia())
         return false;
-x
+
     PonteiroElemento p;
     id = inicio->id;
     nome = inicio->nome;
     qntFolhas = inicio->qntFolhas;
     
-    folhas += qntFolhas;
     arquivos -= 1;
 
     p = inicio;
