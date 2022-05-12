@@ -59,12 +59,17 @@ string Recursao::intervaloCrescente(int p, int q) {
 
     string intervalo;
 
-    int maior = p > q ? p : q; 
-    int menor = p > q ? q : p;
+    if(p > q){
+        return "";
+    };
 
-    if(maior -1 > menor){
-        intervalo = intervaloCrescente(maior -1, menor) + "[" + to_string(maior -1)  + "]";
+
+    if(p < q){
+        intervalo = intervaloCrescente(p, q -1) + "[" + to_string(q)  + "]";
     }
+
+    if(p == q)
+        intervalo += "[" + to_string(q)  + "]";
 
     return intervalo;
 
@@ -78,12 +83,16 @@ string Recursao::intervaloDecrescente(int p, int q) {
     
     string intervalo;
 
-    int maior = p > q ? p : q; 
-    int menor = p > q ? q : p;
-
-    if(maior -1 > menor){
-        intervalo = "[" + to_string(maior -1)  + "]" + intervaloDecrescente(maior -1, menor) ;
+    if(p < q){
+        return "";
     }
+
+    if(p > q){
+        intervalo = "[" + to_string(p)  + "]" + intervaloDecrescente(p -1, q);
+    }
+
+    if(p == q)
+        intervalo += "[" + to_string(p)  + "]";
 
     return intervalo;
 
@@ -100,12 +109,15 @@ string Recursao::paresCrescente(int p) {
         par = true;
     }
 
-    if(!(par == true) or !(p >= 0))
+    if(!(par == true) or !(p >= 0)){
+        par = false;
         return "";
+    }
 
+    sequencia += paresCrescente(p - 1);
+    
     if( p >= 0 and (p % 2) == 0)
         sequencia +=  "[" + to_string(p) + "]";
-    sequencia += paresCrescente(p - 1);
 
     return sequencia;
 }

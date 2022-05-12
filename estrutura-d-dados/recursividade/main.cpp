@@ -20,10 +20,12 @@ int main() {
     // cout << rec.fatorial(5) << endl;
 
 
-    // cout << rec.intervaloCrescente(6, 12) << endl;
+    cout << rec.intervaloDecrescente(4, 2) << endl;
 
-    // cout << rec.intervaloDecrescente(6, 12) << endl;
 
-    cout << rec.paresCrescente(10) << endl;;
+    // cout << rec.intervaloDecrescente(1, 1) << endl;
+
+
+    // cout << rec.paresCrescente(5) << endl;;
 
 }
