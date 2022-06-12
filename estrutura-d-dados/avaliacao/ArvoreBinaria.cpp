@@ -109,7 +109,6 @@ string ArvoreBinaria::listarPreOrdem(PonteiroElemento &e)
     string ret;
     if (e != nullptr) {
         ret = ret + "[" + to_string(e->valor) + "]";
-        //cout << e->valor << "\n";
         ret = ret + listarPreOrdem(e->elementoEsquerda);
         ret = ret + listarPreOrdem(e->elementoDireita);
     }

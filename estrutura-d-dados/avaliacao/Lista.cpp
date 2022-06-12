@@ -115,8 +115,7 @@ int Lista::media() {
         return -1;
     }
 
-    int media, i;
-    media = i = 0; 
+    int media = inicio->valor, i = 0;
     PonteiroElemento p = inicio;
 
     while(p->proximoElemento != nullptr) {
